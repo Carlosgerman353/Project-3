@@ -1,0 +1,49 @@
+body {
+  width: 500px;
+  margin: 50px auto;
+  font-size: 30px;
+}
+.container {
+  padding: 20px;
+}
+.output {
+  border: 1px solid black;
+  height: 60px;
+  padding-right: 15px;
+  padding-top: 15px;
+  text-align: right;
+  border-radius: 1px;
+}
+
+.operators div {
+  border: 1px solid black;
+  border-radius: 1px;
+  width: 75px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 5px 20px 0;
+  background-color: white;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.numbers div {
+  border: 1px solid black;
+  border-radius: 1px;
+  width: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 5px 10px 0;
+}
+
+.equal {
+  border: 1px solid black;
+  width: 15%;
+  text-align: center;
+  padding: 127px 10px;
+  margin: 10px 6px 10px 0;
+  vertical-align: top;
+  background-color: rgb(98, 141, 233);
+}

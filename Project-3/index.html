@@ -1,0 +1,114 @@
+<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var operator = ""
+        var num1 = ""
+        var num2 = ""
+        var output = ""
+
+        function setOperator(newOperator) {
+            operator = newOperator;
+            console.log(operator)
+            output += operator
+            document.getElementById("output").innerText = output
+
+        }
+
+        function setNum(newNum) {
+            console.log(newNum)
+            if (operator === "") {
+                if (!num1.includes(".") && newNum === '.') {
+                    num1 += newNum;
+                    output += newNum
+                } else if (newNum !== '.') {
+                    console.log("else if runs-")
+
+                    num1 += newNum;
+                    output += newNum
+                }
+            } else {
+                console.log("else runs-")
+                if (!num2.includes(".") && newNum === '.') {
+                    num2 += newNum;
+                    output += newNum
+                } else if (newNum !== '.') {
+                    num2 += newNum;
+                    output += newNum
+                }
+
+            }
+            document.getElementById("output").innerText = output
+
+        }
+
+        function clearOutput() {
+            output=""
+            num1=""
+            num2=""
+            operator=""
+            document.getElementById("output").innerText = output
+
+        }
+
+        function evaluateExpr() {
+            var numberOne = parseFloat(num1)
+            var numberTwo = parseFloat(num2)
+            if (operator === "+") {
+                output += "=" + (numberOne + numberTwo)
+            } else if (operator === "-") {
+                output += "=" + (numberOne - numberTwo)
+            } else if (operator === "X") {
+                output += "=" + (numberOne * numberTwo)
+            } else {
+                output += "=" + (numberOne / numberTwo)
+            }
+            document.getElementById("output").innerText = output
+
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="output" id="output"></div>
+    <div class="buttons">
+        <div class="operators">
+            <div class="inline" onclick="setOperator('+')">+</div>
+            <div class="inline" onclick="setOperator('-')">-</div>
+            <div class="inline" onclick="setOperator('X')">&times;</div>
+            <div class="inline" onclick="setOperator('&divide;')">&divide;</div>
+        </div>
+        <div class="inline">
+            <div class="numbers">
+                <div class="inline" onclick="setNum('7')">7</div>
+                <div class="inline" onclick="setNum('8')">8</div>
+                <div class="inline" onclick="setNum('9')">9</div>
+            </div>
+            <div class="numbers">
+                <div class="inline" onclick="setNum('4')">4</div>
+                <div class="inline" onclick="setNum('5')">5</div>
+                <div class="inline" onclick="setNum('6')">6</div>
+            </div>
+            <div class="numbers">
+                <div class="inline" onclick="setNum('1')">1</div>
+                <div class="inline" onclick="setNum('2')">2</div>
+                <div class="inline" onclick="setNum('3')">3</div>
+            </div>
+            <div class="numbers">
+                <div class="inline" onclick="setNum('0')">0</div>
+                <div class="inline" onclick="setNum('.')">.</div>
+                <div class="inline" id="clear" onclick="clearOutput()">C</div>
+            </div>
+        </div>
+        <div class="equal inline" id="result" onclick="evaluateExpr()">=</div>
+    </div>
+</div>
+
+</body>
+</html>
